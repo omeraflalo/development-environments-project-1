@@ -6,7 +6,9 @@
 }
 
 body {
-	background: #000000;
+	/* background: radial-gradient(#000000,#6f6c7d); */
+	background: linear-gradient(#343333, #000000, #343333);
+	text-align: center;
 }
 
 nav {
@@ -21,10 +23,17 @@ nav {
 	margin-top: 32px;
 	left: 5%;
 	overflow: hidden;
+	z-index: 5;
 
 
 }
 
+.btn {
+	background-color: #37383f;
+	color: #ffffff;
+	padding: 6% 12%;
+	border-radius: 16%;
+}
 
 nav a {
 	padding: 1rem 2rem 1.15rem;
@@ -36,7 +45,8 @@ nav a {
 	text-decoration: none;
 }
 
-nav a:hover {
+nav a:hover,
+.btn:hover {
 	background-image: url('https://scottyzen.sirv.com/Images/v/button.png');
 	background-size: 100% 100%;
 	color: #27262c;
@@ -45,7 +55,8 @@ nav a:hover {
 	font-weight: bold;
 }
 
-nav a:active {
+nav a:active,
+.btn:hover {
 	transform: translateY(4px);
 }
 
@@ -84,32 +95,28 @@ section h1 {
 	color: #ef816c;
 	font-size: 85px;
 	text-align: center;
-	stroke: #ebebeb;
 	stroke-width: 12px;
 }
 
 
 
-ul {
-	counter-reset: index;
-	padding: 0;
-	max-width: 300px;
-}
+
 
 /* List element */
 li {
-	counter-increment: index;
 	display: flex;
 	align-items: center;
 	padding: 12px 0;
 	box-sizing: border-box;
+	font-size: 3rem;
+	color: #fff;
 }
 
 
 /* Element counter */
 li::before {
 	content: counters(index, ".", decimal-leading-zero);
-	font-size: 1.5rem;
+	font-size: 4rem;
 	text-align: right;
 	font-weight: bold;
 	min-width: 50px;
@@ -123,28 +130,305 @@ li::before {
 }
 
 
-/* Element separation */
-li+li {
-	border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-
-
-@use postcss-preset-env {
-	stage: 0;
-
-	autoprefixer: {
-		grid: true;
-	}
-
-	browsers: last 2 versions
-}
-
 .maindiv {
 	padding-left: 200px;
 	padding-right: 200px;
 }
 
-ul.center {
-	margin: 0 auto;
+
+hr.sep {
+	background: #ef816c;
+	box-shadow: none;
+	border: none;
+	height: 6px;
+	margin: 0px auto 45px auto;
 }
+
+
+form {
+	width: 320px;
+	margin: 45px auto;
+}
+
+
+.group {
+	position: relative;
+	margin: 45px 0;
+}
+
+textarea {
+	resize: none;
+}
+
+input,
+textarea {
+	background: none;
+	color: #c6c6c6;
+	font-size: 18px;
+	padding: 10px 10px 10px 5px;
+	display: block;
+	width: 320px;
+	border: none;
+	border-radius: 0;
+	border-bottom: 1px solid #c6c6c6;
+}
+
+input:focus,
+textarea:focus {
+	outline: none;
+}
+
+input:focus~label,
+input:valid~label,
+textarea:focus~label,
+textarea:valid~label {
+	top: -14px;
+	font-size: 12px;
+	color: #2196F3;
+}
+
+input:focus~.bar:before,
+textarea:focus~.bar:before {
+	width: 320px;
+}
+
+input[type=password] {
+	letter-spacing: 0.3em;
+}
+
+label {
+	color: #c6c6c6;
+	font-size: 16px;
+	font-weight: normal;
+	position: absolute;
+	pointer-events: none;
+	left: 5px;
+	top: 10px;
+	transition: 300ms ease all;
+}
+
+.bar {
+	position: relative;
+	display: block;
+	width: 320px;
+}
+
+.bar:before {
+	content: "";
+	height: 2px;
+	width: 0;
+	bottom: 0px;
+	position: absolute;
+	background: #2196F3;
+	transition: 300ms ease all;
+	left: 0%;
+}
+
+
+figure {
+	position: sticky;
+	top: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 70%;
+	height: 70%;
+}
+
+figure:nth-child(1) img {
+	transform: scale(0.6) rotate(-12.5deg);
+}
+
+figure:nth-child(2) img {
+	transform: scale(0.6) rotate(-9.5deg);
+}
+
+figure:nth-child(3) img {
+	transform: scale(0.6) rotate(-7deg);
+}
+
+figure:nth-child(4) img {
+	transform: scale(0.6) rotate(-4deg);
+}
+
+figure:nth-child(5) img {
+	transform: scale(0.6) rotate(-1.5deg);
+}
+
+figure:nth-child(6) img {
+	transform: scale(0.6) rotate(1.5deg);
+}
+
+figure:nth-child(7) img {
+	transform: scale(0.6) rotate(4deg);
+}
+
+figure:nth-child(8) img {
+	transform: scale(0.6) rotate(7deg);
+}
+
+figure:nth-child(9) img {
+	transform: scale(0.6) rotate(9.5deg);
+}
+
+figure:nth-child(10) img {
+	transform: scale(0.6) rotate(12.5deg);
+}
+
+figure img {
+	width: 100vmin;
+	height: 100vmin;
+	border-radius: 3px;
+}
+
+
+
+
+
+
+
+
+.card {
+	flex: initial;
+	position: relative;
+	height: 15rem;
+	width: 30rem;
+	margin: 2rem;
+	counter-increment: index;
+
+}
+
+.card__side {
+	height: 15rem;
+	transition: all 0.8s ease;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	-webkit-backface-visibility: hidden;
+	/* We don't want to see the back part of the element. */
+	backface-visibility: hidden;
+	/* We don't want to see the back part of the element. */
+	border-radius: 3px;
+	overflow: hidden;
+	/* The image is overflowing the parent. */
+	box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.15);
+}
+
+.card__side--front {
+	background-color: #242424;
+}
+
+.card__side--back {
+	background-color: #696969;
+	transform: rotateY(180deg);
+}
+
+.card:hover .card__side--back {
+	transform: rotateY(0);
+}
+
+.card:hover .card__side--front {
+	transform: rotateY(-180deg);
+}
+
+.card__theme {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	top: 54%;
+	width: 90%;
+	text-align: center;
+}
+
+
+.card__subject {
+	font-family: "Inconsolata", monospace;
+	letter-spacing: 0.8rem;
+	font-size: 1.6rem;
+	text-transform: uppercase;
+	margin-bottom: 1rem;
+}
+
+.card__title {
+	font-family: "VT323", monospace;
+	text-transform: uppercase;
+	font-size: 6rem;
+	font-weight: 100;
+}
+
+
+.card__heading {
+	text-align: center;
+	color: #fff;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 75%;
+}
+
+.card__heading-span {
+	font-family: "VT323", monospace;
+	font-size: 4.2rem;
+	font-weight: 300;
+	text-transform: uppercase;
+	padding: 1rem 1.5rem;
+	color: #fff;
+}
+
+.card__details {
+	font-family: "Inconsolata", monospace;
+	padding: 4rem 2rem;
+}
+
+
+@media only screen and (max-width: 37.5em),
+only screen and (hover: none) {
+	.card {
+		height: auto;
+		border-radius: 3px;
+		background-color: #fff;
+		box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.15);
+	}
+
+	.card__side {
+		height: auto;
+		position: relative;
+		box-shadow: none;
+	}
+
+	.card__side--front {
+		clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+	}
+
+	.card__side--back {
+		transform: rotateY(0);
+	}
+
+	.card:hover .card__side--front {
+		transform: rotateY(0);
+	}
+
+	.card__details {
+		padding: 3rem 2rem;
+	}
+
+
+	.card__title {
+		font-size: 4rem;
+	}
+}
+
+
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	z-index: 1;
+  }
+
+  iframe{
+	width: 100%;
+	height: 100%;
+  }
