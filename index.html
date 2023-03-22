@@ -346,6 +346,12 @@
     <section id="like" class="section">
       <h1>give me a like</h1>
       <hr class="sep" style="width: 45%;" />
+
+      <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout=""
+        data-action="" data-size="" data-share="false"></div>
+      <div id="fb-root"></div>
+      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v16.0"
+        nonce="6MjxXTtE"></script>
       <br />
       <br />
       <br />
@@ -465,10 +471,10 @@
 
             <script>
               function addEmoji() {
-                document.getElementById("message").value+=document.getElementById("selectEmoji").value;
+                document.getElementById("message").value += document.getElementById("selectEmoji").value;
               }
             </script>
-          
+
           </div>
         </form>
       </div>
